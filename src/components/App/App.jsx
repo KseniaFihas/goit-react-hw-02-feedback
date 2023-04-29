@@ -13,12 +13,9 @@ export class App extends Component {
   };
 
   updateState = nameFeedback => {
-    this.setState(oldData => {
-      let obj = { ...oldData };
-
-      obj[nameFeedback] = oldData[nameFeedback] + 1;
-      return obj;
-    });
+     this.setState(prevState => ({
+      [nameFeedback]: prevState[nameFeedback] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
